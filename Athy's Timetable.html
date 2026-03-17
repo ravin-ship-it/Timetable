@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Athy's Timetable</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked@15.0.0/lib/marked.umd.js" integrity="sha384-HzDHWAT/BtQWtNhpscFWbgX/bVosudqT0f+OzqNCegwdo3/N3UrnaVKJBoQuy9Sj" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.8.1/github-markdown.min.css" rel="stylesheet" integrity="sha384-CB5UrozGPrZ1wtKN7zzu52o1nSIKg24++ku8W0R+0l+XR5Rs3MQijT9HywGelTAH" crossorigin="anonymous">
+    <style>
+        body {
+            width: 100%;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .markdown-body {
+            font-family: system-ui, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="markdown-body">
+    <div id="content">Loading markdown...</div>
+    <script>
+        fetch("./Athy's Timetable.md")
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById("content").innerHTML=marked.parse(text);
+            });
+    </script>
+</body>
+
+</html>
